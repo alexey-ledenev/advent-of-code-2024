@@ -1,6 +1,6 @@
 {
   "tasks": {
-    "day": "deno run --allow-read src/main.ts",
+    "day": "deno run --allow-read --allow-run src/main.ts",
     "type-check": "deno check",
     "lint": "deno lint",
     "lint:fix": "deno lint --fix",
