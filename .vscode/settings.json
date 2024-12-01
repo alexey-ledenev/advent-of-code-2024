@@ -1,0 +1,11 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "denoland.vscode-deno",
+  "deno.enable": true,
+  "deno.lint": true,
+  "deno.codeLens.references": true,
+  "deno.codeLens.implementations": true,
+  "deno.suggest.imports.hosts": {
+    "https://deno.land": true
+  }
+}
