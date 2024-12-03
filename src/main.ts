@@ -9,17 +9,18 @@ if (Number.isNaN(dayNumber)) {
   Deno.exit(1);
 }
 
-const filePath = `${Deno.cwd()}/src/day-${dayNumber}/index.ts`;
+const folderPath = `${Deno.cwd()}/src/day-${dayNumber}`;
+const scriptPath = `${folderPath}/index.ts`;
 
 try {
-  await Deno.lstat(filePath);
+  await Deno.lstat(scriptPath);
 } catch {
   console.error(`Day ${dayNumber} not found`);
   Deno.exit(1);
 }
 
 const command = new Deno.Command(Deno.execPath(), {
-  args: [filePath],
+  args: [`--allow-read=${folderPath}`, scriptPath],
 });
 
 try {
