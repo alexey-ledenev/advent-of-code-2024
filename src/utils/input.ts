@@ -1,3 +1,5 @@
+import { dirname, fromFileUrl } from '@std/path';
+
 export const readDataFromFile = (filePath: string) => Deno.readTextFile(filePath);
 
 export const readLinesFromFile = async (filePath: string) => {
@@ -14,3 +16,8 @@ export const readNumbersFromFile = async (filePath: string) => {
   const lines = await readLinesFromFile(filePath);
   return lines.map(Number);
 };
+
+export const getInputFilePath = (
+  moduleUrl: string,
+  fileName = 'input.txt',
+) => `${dirname(fromFileUrl(new URL(moduleUrl)))}/${fileName}`;
